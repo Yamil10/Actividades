@@ -20,6 +20,16 @@ public class Queue {
     }
 
     public void printQueue() {
-        list.printList();
+        Node current = list.head;
+        if (current == null) {
+            System.out.println("Lista vacía.");
+            return;
+        }
+        while (current != null) {
+            System.out.print(current.value);
+            if (current.next != null) System.out.print(" -> ");
+            current = current.next;
+        }
+        System.out.println();
     }
 }
